@@ -4,9 +4,13 @@ Install Ubuntu 12.04 server
 Install lamp phpmyadmin git
 ---------------------------
 sudo sudo apt-get update
+
 sudo apt-get install lamp-server^
+
 sudo apt-get install phpmyadmin
+
 sudo apt-get install git
+
 
 Enable mod-rewrite (zend)
 -------------------------
@@ -27,12 +31,14 @@ sudo service apache2 restart
 Clone repository
 ----------------
 cd /var/www
+
 sudo git clone https://github.com/emersonmatsumoto/zendalbum.git
 
 
 Install zend framework
 ----------------------
 sudo php composer.phar self-update
+
 sudo php composer.phar install
 
 
@@ -42,6 +48,7 @@ Create database
 http://localhost/phpmyadmin
 
 ->Databases
+
 ->Create new database:
 	
 	zf2tutorial
