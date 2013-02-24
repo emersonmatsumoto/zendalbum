@@ -1,3 +1,79 @@
+Install Ubuntu 12.04 server
+===========================
+
+Install lamp phpmyadmin git
+---------------------------
+sudo sudo apt-get update
+sudo apt-get install lamp-server^
+sudo apt-get install phpmyadmin
+sudo apt-get install git
+
+Enable mod-rewrite (zend)
+-------------------------
+sudo a2enmod rewrite
+
+Enable php errors
+-----------------
+sudo nano /etc/php5/apache2/php.ini 
+
+find this line and change:
+	
+	display_errors = On
+
+Restart server
+--------------
+sudo service apache2 restart
+
+Clone repository
+----------------
+cd /var/www
+sudo git clone https://github.com/emersonmatsumoto/zendalbum.git
+
+
+Install zend framework
+----------------------
+sudo php composer.phar self-update
+sudo php composer.phar install
+
+
+Create database
+===============
+
+http://localhost/phpmyadmin
+
+->Databases
+->Create new database:
+	
+	zf2tutorial
+
+Reload navigation frame and click zf2tutorial
+
+click SQL and paste:
+
+
+	CREATE TABLE album (
+	  id int(11) NOT NULL auto_increment,
+	  artist varchar(100) NOT NULL,
+	  title varchar(100) NOT NULL,
+	  PRIMARY KEY (id)
+	);
+	INSERT INTO album (artist, title)
+		VALUES  ('The  Military  Wives',  'In  My  Dreams');
+	INSERT INTO album (artist, title)
+		VALUES  ('Adele',  '21');
+	INSERT INTO album (artist, title)
+		VALUES  ('Bruce  Springsteen',  'Wrecking Ball (Deluxe)');
+	INSERT INTO album (artist, title)
+		VALUES  ('Lana  Del  Rey',  'Born  To  Die');
+	INSERT INTO album (artist, title)
+		VALUES  ('Gotye',  'Making  Mirrors');
+
+Edit global.php
+===============
+
+/var/www/zendalbum/config/autoload/global.php
+
+
 ZendSkeletonApplication
 =======================
 
