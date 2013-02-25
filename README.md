@@ -16,6 +16,14 @@ Enable mod-rewrite (zend)
 -------------------------
 sudo a2enmod rewrite
 
+Set AllowOverride FileInfo
+--------------------------
+sudo nano /etc/apache2/sites-available/default
+
+in /var/www/ set:
+
+	AllowOverride FileInfo
+
 Enable php errors
 -----------------
 sudo nano /etc/php5/apache2/php.ini 
